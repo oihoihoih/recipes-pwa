@@ -1,0 +1,10 @@
+<mat-card class="meal-card" appearance="outlined" (click)="onClick(meal)">
+  <mat-card-header class="meal-title">
+    <mat-card-title>{{ meal.strMeal }}</mat-card-title>
+  </mat-card-header>
+  <img
+    mat-card-image
+    [src]="meal.strMealThumb"
+    alt="Photo of {{ meal.strMeal }}"
+  />
+</mat-card>

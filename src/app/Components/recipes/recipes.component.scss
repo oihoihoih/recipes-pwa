@@ -1,0 +1,28 @@
+.recipes {
+  padding: 2rem;
+}
+
+.recipes__filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+
+  form {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .recipes__filters--visualization {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
+}

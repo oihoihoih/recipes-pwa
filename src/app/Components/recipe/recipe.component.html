@@ -1,0 +1,43 @@
+<main *ngIf="recipe" class="recipe-detail-container">
+  <section class="recipe">
+    <!-- HEADER -->
+    <header class="recipe__header">
+      <h2>{{ recipe.strMeal }}</h2>
+      <app-icon-text-button
+        icon="arrow_back"
+        buttonText="Back"
+        (click)="goBack()"
+      ></app-icon-text-button>
+    </header>
+
+    <!-- IMAGE -->
+    <div class="recipe__image">
+      <img [src]="recipe.strMealThumb" alt="{{ recipe.strMeal }}" />
+    </div>
+
+    <!-- RECIPE INFO (CHIPS) -->
+    <mat-chip-set class="recipe__info">
+      <app-chip [chipText]="recipe.strCategory" icon="flag"></app-chip>
+      <app-chip [chipText]="recipe.strArea" icon="location_on"></app-chip>
+    </mat-chip-set>
+
+    <!-- RECIPE DETAILS -->
+    <app-expansion-panel title="Show all details">
+      <div class="recipe__details">
+        <!-- Ingredients -->
+        <app-expansion-panel title="Ingredients">
+          <ul>
+            <li *ngFor="let ingredient of ingredients; let i = index">
+              {{ measures[i] }} - {{ ingredient }}
+            </li>
+          </ul>
+        </app-expansion-panel>
+
+        <!-- Instructions -->
+        <app-expansion-panel title="Instructions">
+          <p>{{ recipe.strInstructions }}</p>
+        </app-expansion-panel>
+      </div>
+    </app-expansion-panel>
+  </section>
+</main>

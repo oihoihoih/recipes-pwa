@@ -1,0 +1,59 @@
+<h1>Recipes</h1>
+<section class="recipes">
+  <!-- Category selection filter -->
+  <aside class="recipes__filters">
+    <form [formGroup]="form" (ngSubmit)="searchRecipes(categoryControl.value)">
+      <app-input
+        label="Select a category"
+        [options]="categoriesName"
+        [control]="categoryControl"
+        [appearance]="'outline'"
+      ></app-input>
+      <app-primary-button
+        buttonText="SEARCH"
+        type="submit"
+      ></app-primary-button>
+    </form>
+
+    <div class="recipes__filters--visualization">
+      <app-mini-fab-btn
+        [icon]="'view_list'"
+        (clicked)="changeView('list')"
+        [active]="view === 'list'"
+      ></app-mini-fab-btn>
+      <app-mini-fab-btn
+        [icon]="'view_module'"
+        (clicked)="changeView('grid')"
+        [active]="view === 'grid'"
+      ></app-mini-fab-btn>
+    </div>
+  </aside>
+
+  <!-- Aquí listado de recetas -->
+  <div *ngIf="isLoading" class="recipes__spinner">
+    <app-spinner></app-spinner>
+  </div>
+
+  <ng-container *ngIf="!isLoading">
+    <!-- VISTA GRID -->
+    <ul *ngIf="view === 'grid'" class="card-container">
+      <li *ngFor="let recipe of recipes" [@fadeInOut]>
+        <app-card
+          [meal]="recipe"
+          (itemClicked)="onRecipeClicked($event)"
+        ></app-card>
+      </li>
+    </ul>
+
+    <!-- VISTA LISTA -->
+    <ul *ngIf="view === 'list'" class="list-container" [@fadeInOut]>
+      <li *ngFor="let recipe of recipes">
+        <app-list
+          [items]="recipes"
+          title="strMeal"
+          (itemClicked)="onRecipeClicked($event)"
+        ></app-list>
+      </li>
+    </ul>
+  </ng-container>
+</section>
