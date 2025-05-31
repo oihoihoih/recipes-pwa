@@ -9,4 +9,10 @@ header {
   position: fixed;
   background-color: white;
   z-index: 1000;
+
+  .site-logo {
+    text-decoration: none;
+    color: black;
+    align-self: center;
+  }
 }

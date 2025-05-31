@@ -1,7 +1,8 @@
-import { Input, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
 
 // Components
 import { InputComponent } from './Components/input/input.component';
@@ -62,6 +63,7 @@ import { ExpansionPanelComponent } from './Components/expansion-panel/expansion-
     MatTabsModule,
     MatTreeModule,
     ReactiveFormsModule,
+    RouterModule,
   ],
   exports: [
     CardComponent,
