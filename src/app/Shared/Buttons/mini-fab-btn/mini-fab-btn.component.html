@@ -1,3 +1,8 @@
-<button mat-mini-fab [ngClass]="{ 'active-btn': active }" (click)="onClick()">
+<button
+  mat-mini-fab
+  [ngClass]="{ 'inactive-btn': !active }"
+  (click)="onClick()"
+  class="mini-fab-btn"
+>
   <mat-icon>{{ icon }}</mat-icon>
 </button>

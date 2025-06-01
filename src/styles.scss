@@ -1,8 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
 
+// Global colors
+:root {
+  --primary: #673ab7; /* Deep Purple 500 */
+  --primary-light: #ede7f6; /* Deep Purple 50 */
+  --primary-dark: #4527a0; /* Deep Purple 800 */
+  --accent: #ffc107; /* Amber 500 */
+  --accent-light: #ffecb3; /* Amber 100 */
+  --accent-dark: #ffa000; /* Amber 700 */
+  --warn: #f44336; /* Red 500 */
+  --background: #fafafa; /* Grey 50 */
+  --text: rgba(0, 0, 0, 0.87);
+  --text-secondary: rgba(0, 0, 0, 0.54);
+}
+
 html,
 body {
   height: 100%;
+  background-color: var(--background);
 }
 body {
   margin: 0;
@@ -13,16 +28,4 @@ ul {
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-// Global colors
-:root {
-  --primary: #3f51b5;
-  --primary-light: #c5cae9;
-  --primary-dark: #303f9f;
-  --accent: #ff4081;
-  --warn: #f44336;
-  --background: #fafafa;
-  --text: rgba(0, 0, 0, 0.87);
-  --text-secondary: rgba(0, 0, 0, 0.54);
 }
