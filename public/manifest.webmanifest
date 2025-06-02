@@ -1,8 +1,9 @@
 {
   "name": "recipes-pwa",
   "short_name": "recipes-pwa",
-  "theme_color": "#1976d2",
+  "theme_color": "#673ab7",
   "background_color": "#fafafa",
+  "description": "Recipes PWA is a Progressive Web App that provides a collection of recipes from various cuisines.",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
@@ -55,5 +56,11 @@
       "type": "image/png",
       "purpose": "maskable any"
     }
-  ]
+  ],
+  "id": "/",
+  "launch_handler": {
+    "client_mode": "navigate-existing",
+    "url": "./"
+  },
+  "orientation": "portrait"
 }
