@@ -62,5 +62,9 @@
     "client_mode": "navigate-existing",
     "url": "./"
   },
-  "orientation": "portrait"
+  "orientation": "portrait",
+  "categories": ["food", "cooking", "recipes", "pwa"],
+  "dir": "ltr",
+  "lang": "en-US",
+  "prefer_related_applications": false
 }
